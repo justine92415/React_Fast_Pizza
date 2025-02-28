@@ -26,3 +26,23 @@ export type IOrder = {
   estimatedDelivery: string;
   cart: string;
 };
+
+export type OrderFormData = {
+  customer: string;
+  phone: string;
+  address: string;
+  cart: string;
+  priority: string;
+};
+
+export type CreateOrderType = {
+  customer: string;
+  phone: string;
+  address: string;
+  cart: any[];
+  priority: boolean;
+};
+
+export type OrderFormError = {
+  phone?: string;
+}
