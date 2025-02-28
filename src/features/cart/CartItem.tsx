@@ -1,16 +1,18 @@
-import { formatCurrency } from '../../utils/helpers';
-import { CartItemProps } from './cart.types';
+import Button from "../../ui/Button";
+import { formatCurrency } from "../../utils/helpers";
+import { CartItemProps } from "./cart.types";
 
 function CartItem({ item }: CartItemProps) {
   const { pizzaId, name, quantity, totalPrice } = item;
 
   return (
-    <li>
-      <p>
+    <li className="py-3">
+      <p className="mb-1">
         {quantity}&times; {name}
       </p>
-      <div>
-        <p>{formatCurrency(totalPrice)}</p>
+      <div className="flex items-center justify-between">
+        <p className="text-sm font-bold">{formatCurrency(totalPrice)}</p>
+        <Button type="small">Delete</Button>
       </div>
     </li>
   );
