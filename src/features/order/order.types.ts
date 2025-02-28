@@ -1,7 +1,7 @@
 export type OrderItemProps = {
   item: OrderItemType;
-  isLoadingIngredients: boolean;
-  ingredients: string[];
+  isLoadingIngredients?: boolean;
+  ingredients?: string[];
 };
 
 export type OrderItemType = {
@@ -24,7 +24,7 @@ export type IOrder = {
   priorityPrice: number;
   orderPrice: number;
   estimatedDelivery: string;
-  cart: string;
+  cart: any[];
 };
 
 export type OrderFormData = {
@@ -45,4 +45,4 @@ export type CreateOrderType = {
 
 export type OrderFormError = {
   phone?: string;
-}
+};
