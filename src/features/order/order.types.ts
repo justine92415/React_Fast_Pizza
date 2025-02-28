@@ -1,5 +1,5 @@
 export type OrderItemProps = {
-  item: OrderItemType;
+  item: Cart;
   isLoadingIngredients?: boolean;
   ingredients?: string[];
 };
@@ -24,7 +24,7 @@ export type IOrder = {
   priorityPrice: number;
   orderPrice: number;
   estimatedDelivery: string;
-  cart: any[];
+  cart: Cart[];
 };
 
 export type OrderFormData = {
@@ -46,3 +46,13 @@ export type CreateOrderType = {
 export type OrderFormError = {
   phone?: string;
 };
+
+export interface Cart {
+  addIngredients: any[];
+  removeIngredients: any[];
+  pizzaId: number;
+  name: string;
+  quantity: number;
+  unitPrice: number;
+  totalPrice: number;
+}
