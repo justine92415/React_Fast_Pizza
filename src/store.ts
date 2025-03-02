@@ -10,3 +10,7 @@ const store = configureStore({
 });
 
 export default store;
+
+// 從 store 本身推斷這些類型
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
