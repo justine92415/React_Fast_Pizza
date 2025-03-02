@@ -32,6 +32,7 @@ const userSlice = createSlice({
   initialState: initState,
   reducers: {
     updateName(state, action) {
+      console.log('###',action.payload);
       state.username = action.payload;
     },
   },
