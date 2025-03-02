@@ -124,11 +124,11 @@ function CreateOrder() {
           <input type="hidden" name="cart" value={JSON.stringify(cart)} />
           <input
             type="hidden"
-            name="cart"
+            name="position"
             value={
-              position.latitude &&
-              position.longitude &&
-              `${position.latitude},${position.longitude}`
+              position.latitude && position.longitude
+                ? `${position.latitude},${position.longitude}`
+                : ""
             }
           />
           <Button disabled={isSubmitting || isLoadingAddress} type="primary">
@@ -151,6 +151,8 @@ export async function action({ request }: { request: Request }) {
     cart: JSON.parse(data.cart),
     priority: data.priority === "true",
   } as CreateOrderType;
+
+  console.log("###order", order);
 
   const errors: OrderFormError = {};
   if (!isValidPhone(order.phone)) {
