@@ -9,3 +9,7 @@ export type CartItemType = {
   unitPrice: number;
   totalPrice: number;
 }
+
+export type CartState = {
+  cart: CartItemType[];
+}
