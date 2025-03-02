@@ -3,7 +3,7 @@ export type MenuItemProps = {
 }
 
 export type MenuItemType = {
-  id: number;
+  id: string;
   name: string;
   unitPrice: number;
   ingredients: string[];
