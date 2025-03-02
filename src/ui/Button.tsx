@@ -1,3 +1,4 @@
+import { FormEvent } from "react";
 import { Link } from "react-router-dom";
 
 type ButtonType = {
@@ -5,7 +6,7 @@ type ButtonType = {
   disabled?: boolean;
   to?: string;
   type: "small" | "primary" | "secondary" | "round";
-  onClick?: () => void;
+  onClick?: (e ?:FormEvent) => void;
 };
 
 function Button({ children, disabled, to, type, onClick }: ButtonType) {
